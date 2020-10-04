@@ -1,33 +1,12 @@
 @font-face {
-  font-family: "lato-black";
-  src: url("../fonts/Lato-Black.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "lato";
-  src: url("../fonts/Lato-Regular.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "lato-light";
   src: url("../fonts/Lato-Light.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
-@font-face {
-  font-family: "lato-hairline";
-  src: url("../fonts/Lato-Hairline.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-
 ::selection,
-span.highlight {
+span {
   background: rgb(255, 217, 0);
   color: #000;
 }
@@ -42,7 +21,6 @@ span.highlight {
 body {
   padding: 0;
   margin: 0;
-  /*background: linear-gradient(to right, #26b7d1, #1091a8);*/
   background: linear-gradient(to right, #2aaccf, #7fcddf);
   display: grid;
   justify-content: center;
@@ -57,64 +35,10 @@ body {
   position: relative;
 }
 
-#hangman-img,
-#hangman-head,
-#hangman-body,
-#hangman-right-leg,
-#hangman-left-leg,
-#hangman-right-arm,
-#hangman-left-arm,
-#hangman-right-eye,
-#hangman-left-eye,
-#hangman-mouth,
-#hangman-dead {
+#hangman-img {
   background-repeat: no-repeat;
   height: 350px;
   width: 300px;
-}
-
-#hangman-img {
-  background-image: url(../img/1.png);
-}
-
-#hangman-head {
-  background-image: url(../img/2.png);
-}
-
-#hangman-body {
-  background-image: url(../img/3.png);
-}
-
-#hangman-right-leg {
-  background-image: url(../img/4.png);
-}
-
-#hangman-left-leg {
-  background-image: url(../img/5.png);
-}
-
-#hangman-right-arm {
-  background-image: url(../img/6.png);
-}
-
-#hangman-left-arm {
-  background-image: url(../img/7.png);
-}
-
-#hangman-right-eye {
-  background-image: url(../img/8.png);
-}
-
-#hangman-left-eye {
-  background-image: url(../img/9.png);
-}
-
-#hangman-mouth {
-  background-image: url(../img/10.png);
-}
-
-#hangman-dead {
-  background-image: url(../img/11.png);
 }
 
 #hangman-word {
@@ -179,7 +103,6 @@ body {
   cursor: default;
   color: #fff;
   background: #4a6266;
-  /*background: rgba(255, 156, 156, 0.75);*/
 }
 
 #user-input {
@@ -203,7 +126,6 @@ input {
   margin: 0;
   color: #ffffff;
   width: 85px;
-  /*background: rgba(101, 194, 114, 0.75);*/
   background: rgba(255, 122, 204, 0.75);
   padding: 5px;
   border: none;
@@ -211,37 +133,30 @@ input {
 }
 
 #user-input > button:hover {
-  /*background: rgba(101, 194, 114, 0.9);*/
   background: rgba(255, 154, 216, 0.75);
   transition: linear 0.2s;
 }
 
-.dark-bg {
+#game-ended {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal {
-  box-sizing: border-box;
-  text-align: center;
+#game-ended .msg-box {
+  margin: auto;
   margin-top: 25vh;
-  padding: 25px;
-  border-radius: 15px;
-  background-color: rgb(245, 245, 245);
-  width: 600px;
+  width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 20px;
   box-shadow: 4px 4px 20px -2px rgba(0, 0, 0, 0.75);
-  animation: fadeIn 1s;
 }
 
-.modal h1 {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.modal p {
-  font-size: 1.2rem;
-}
-
-.btn {
+#game-ended .msg-box .btn {
   width: 250px;
   padding: 20px;
   font-weight: bold;
@@ -255,14 +170,17 @@ input {
   margin-top: 4vh;
 }
 
-.btn:hover {
-  transition: 0.2s linear;
-  background: rgba(255, 154, 216);
+#game-ended .msg-box h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.gif {
-  width: 150px;
-  height: 150px;
+#game-ended .msg-box p {
+  font-size: 1.2rem;
+}
+
+#game-ended .msg-box .btn:hover {
+  background: rgba(255, 154, 216);
 }
 
 @keyframes fadeIn {
@@ -281,17 +199,7 @@ input {
     width: 600px;
   }
 
-  #hangman-img,
-  #hangman-head,
-  #hangman-body,
-  #hangman-right-leg,
-  #hangman-left-leg,
-  #hangman-right-arm,
-  #hangman-left-arm,
-  #hangman-right-eye,
-  #hangman-left-eye,
-  #hangman-mouth,
-  #hangman-dead {
+  #hangman-img {
     width: 215px;
     height: 300px;
   }
@@ -329,17 +237,7 @@ input {
     margin: 2vh auto;
   }
 
-  #hangman-img,
-  #hangman-head,
-  #hangman-body,
-  #hangman-right-leg,
-  #hangman-left-leg,
-  #hangman-right-arm,
-  #hangman-left-arm,
-  #hangman-right-eye,
-  #hangman-left-eye,
-  #hangman-mouth,
-  #hangman-dead {
+  #hangman-img {
     width: 215px;
     height: 300px;
   }
@@ -372,21 +270,6 @@ input {
     margin: auto;
   }
 
-  .modal {
-    margin-top: 20vh;
-    padding: 25px;
-    width: 300px;
-  }
-
-  .modal h1 {
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
-
-  .modal p {
-    font-size: 1.1rem;
-  }
-
   .btn {
     width: 175px;
     padding: 20px;
@@ -406,17 +289,7 @@ input {
     width: 350px;
   }
 
-  #hangman-img,
-  #hangman-head,
-  #hangman-body,
-  #hangman-right-leg,
-  #hangman-left-leg,
-  #hangman-right-arm,
-  #hangman-left-arm,
-  #hangman-right-eye,
-  #hangman-left-eye,
-  #hangman-mouth,
-  #hangman-dead {
+  #hangman-img {
     margin: auto;
   }
 
