@@ -11,7 +11,7 @@
   <body>
     <div id="game">
       <main id="blank">
-        <div id="hangman-img"></div>
+        <img src="/img/0.png" id="hangman-img" alt="hangman" />
         <p id="hangman-word"></p>
         <p id="letter-amount"></p>
         <p id="score">PUNTOS: 0</p>
@@ -51,6 +51,13 @@
         <button>✔</button>
       </div>
       <script src="js/index.js"></script>
+    </div>
+    <div id="game-ended">
+      <div class="msg-box">
+        <h3 id="game-ended-status">MESSAGE</h3>
+        <p id="game-ended-msg">LA PALABRA ERA...</p>
+        <p class="btn">JUGAR OTRA VEZ</p>
+      </div>
     </div>
   </body>
 </html>
