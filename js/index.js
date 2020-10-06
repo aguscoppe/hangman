@@ -67,8 +67,8 @@ function updateHangman() {
   hangmanImage.src = `../img/${lostScore}.png`;
 }
 
-function disableLetter() {
-  let clickedLetter = event.target;
+function disableLetter(e) {
+  let clickedLetter = e.target.innerHTML;
   if (clickedLetter.id !== "used-letter") {
     clickedLetter.id = "used-letter";
     clickedLetter.disabled = true;
@@ -81,7 +81,7 @@ function compareLetter(e) {
   if (usedLetters.indexOf(letter) === -1) {
     usedLetters.push(letter);
   }
-  disableLetter();
+  disableLetter(e);
   if (secretWord.indexOf(letter) === -1) {
     lostScore += 1;
     updateHangman();
