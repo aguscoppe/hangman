@@ -108,9 +108,9 @@ function compareWord(e) {
       updateHangman();
     }
     wordInput.value = "";
+    guesses += 1;
+    updateScoreTries();
   }
-  guesses += 1;
-  updateScoreTries();
 }
 
 function newGame() {
