@@ -1,28 +1,6 @@
 // FUNCTIONS
-function selectWord() {
-  const wordArray = [
-    "BOLETO",
-    "HAMACA",
-    "PEPINO",
-    "AVION",
-    "PRINCIPIO",
-    "ABOGADO",
-    "CALZADO",
-    "BEBIDA",
-    "COMENTARIO",
-    "SABIDURIA",
-    "TELEVISION",
-    "PINGUINO",
-    "TERRIBLE",
-    "TITERE",
-    "COLMENA",
-    "ACERTIJO",
-    "RECETA",
-    "CORTINA",
-    "MAÑANA",
-  ];
-  const secretWord = wordArray[Math.floor(Math.random() * wordArray.length)];
-  return secretWord;
+function newGame() {
+  location.reload();
 }
 
 function showMessage(status, divTitle, divMsg, divContainer) {
@@ -117,8 +95,30 @@ function compareWord(e) {
   }
 }
 
-function newGame() {
-  location.reload();
+function selectWord() {
+  const wordArray = [
+    "BOLETO",
+    "HAMACA",
+    "PEPINO",
+    "AVION",
+    "PRINCIPIO",
+    "ABOGADO",
+    "CALZADO",
+    "BEBIDA",
+    "COMENTARIO",
+    "SABIDURIA",
+    "TELEVISION",
+    "PINGUINO",
+    "TERRIBLE",
+    "TITERE",
+    "COLMENA",
+    "ACERTIJO",
+    "RECETA",
+    "CORTINA",
+    "MAÑANA",
+  ];
+  const secretWord = wordArray[Math.floor(Math.random() * wordArray.length)];
+  return secretWord;
 }
 
 // SELECTORS
