@@ -25,6 +25,14 @@ function selectWord() {
   return secretWord;
 }
 
+function showMessage(status, divTitle, divMsg, divContainer) {
+  divContainer.style.display = "block";
+  divTitle.innerHTML = status;
+  divMsg.innerHTML = `La palabra era <span>${secretWord.toLowerCase()}</span>. </br> 
+  El juego finalizó con un total de ${guesses} intentos y ${score} puntos.`;
+  divContainer.querySelector(".btn").addEventListener("click", newGame);
+}
+
 function endGame(userWon) {
   const gameEndedDiv = document.querySelector("#game-ended");
   const gameEndedStatus = gameEndedDiv.querySelector("#game-ended-status");
@@ -35,11 +43,7 @@ function endGame(userWon) {
   } else {
     status = "Perdiste 😢";
   }
-  gameEndedDiv.style.display = "block";
-  gameEndedStatus.innerHTML = status;
-  gameEndedMsg.innerHTML = `La palabra era <span>${secretWord.toLowerCase()}</span>. </br> 
-  El juego finalizó con un total de ${guesses} intentos y ${score} puntos.`;
-  gameEndedDiv.querySelector(".btn").addEventListener("click", newGame);
+  showMessage(status, gameEndedStatus, gameEndedMsg, gameEndedDiv);
 }
 
 function updateScoreTries() {
@@ -68,7 +72,7 @@ function updateHangman() {
 }
 
 function disableLetter(e) {
-  let clickedLetter = e.target.innerHTML;
+  let clickedLetter = e.target;
   if (clickedLetter.id !== "used-letter") {
     clickedLetter.id = "used-letter";
     clickedLetter.disabled = true;
@@ -131,7 +135,6 @@ const scoreUI = document.querySelector("#score");
 const guessesUI = document.querySelector("#guesses");
 
 // VARIABLES
-
 const secretWord = selectWord();
 let score = 0;
 let guesses = 0;
@@ -140,7 +143,6 @@ let lostScore = 0;
 let gameOn = false;
 
 // MAIN
-
 letterButton.forEach(function (button) {
   button.addEventListener("click", compareLetter);
 });
